@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,900;1,700;1,900&family=Roboto+Slab:wght@300;400;600;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="headerFooterStyle.css">
+    <title>Earrings | Jewelicious</title>
+    <style>
+        #page-info-holder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            /* background: #a78627;
+            background:#f7f8fc; */
+        }
+
+        #page-info-holder>h1 {
+            padding: 10px 0;
+            font-size: 22px;
+            /* color:#03071E;
+           color:#f7f8fc;
+           color:#a78627 */
+        }
+
+        #page-info-holder>p {
+            word-spacing: 5px;
+            font-size: 11px;
+        }
+
+        #product-holder {
+            display: flex;
+            justify-content: space-between;
+            padding: 70px;
+            background-color: #03071E;
+        }
+
+        #product-image-holder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 47vw;
+
+        }
+
+        #main-product-image-holder {
+            position: relative;
+        }
+
+        #main-product-image-holder i {
+            font-size: 30px;
+            position: absolute;
+            color: #a78627;
+        }
+
+        #transparent-background-heart {
+            z-index: 1;
+            top: 15px;
+            right: 20px;
+            display: none;
+        }
+
+        #colored-background-heart {
+            display: none;
+            color: #03071E !important;
+            top: 0;
+            right: 0;
+        }
+
+        #right-icon,
+        #left-icon {
+            font-size: 20px !important;
+            top: 250px;
+            border-radius: 50px;
+            padding: 7px 12px;
+            background-color: #03071E;
+            background-color: white;
+            border: 3px solid #a78627;
+            box-shadow: 1px 1px 3px 1px #a78627;
+            display: none;
+        }
+
+        #right-icon {
+            right: -20px;
+        }
+
+        #left-icon {
+            left: -20px;
+        }
+
+        #main-product-image-holder:hover #right-icon,
+        #main-product-image-holder:hover #left-icon,
+        #main-product-image-holder:hover #transparent-background-heart {
+            display: block;
+        }
+
+        #right-icon:hover {
+            background-color: #03071E;
+        }
+
+        #left-icon:hover {
+            background-color: #03071E;
+        }
+
+
+        #transparent-background-heart:hover #colored-background-heart {
+            display: block;
+        }
+
+        #transparent-background-heart:hover {
+            color: transparent;
+        }
+
+        #main-product-image-holder>img {
+            width: 450px;
+            height: 500px;
+            border: 4px solid #a78627;
+        }
+
+        #sub-images {
+            padding: 10px 0;
+        }
+
+        #sub-images>img {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #a78627;
+        }
+
+        #product-details-holder {
+            width: 45vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        #product-details-holder>h1 {
+            font-size: 25px;
+        }
+
+        #product-details-holder>p:nth-child(2) {
+            font-size: 18px;
+            padding: 5px 0;
+        }
+
+        #product-details-holder>p:nth-child(3) {
+            font-size: 12px;
+        }
+
+        .quantity-holder {
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .quantity-holder>p {
+            font-size: 16px;
+            margin-right: 20px;
+        }
+
+        .quantity-holder>div {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-holder button {
+            padding: 3px 7px;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .quantity-holder button:first-child:hover {
+            transform: scale(1.2);
+        }
+
+        .quantity-holder button:last-child:hover {
+            transform: scale(1.5);
+        }
+
+        .quantity-holder span {
+            padding: 7px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            background-color: #f7f8fc;
+            border-radius: 5px 0 5px 0;
+        }
+
+        /* #cart-list-quantity-holder{
+            margin-top:0px;
+            flex-direction:row !important;
+            width:auto;
+            
+        }
+        #cart-list-quantity-holder>p{
+            font-size:12px;
+            margin-right: 0;
+        }
+        #cart-list-quantity-holder>div{
+          display: flex;
+          align-items: center;
+          flex-direction:row !important;
+          margin-left:10px;
+          
+        }
+        #cart-list-quantity-holder button{
+           padding:0;
+           font-size:14px;
+        }
+        */
+        /* #cart-list-quantity-holder>div:last-child button:first-child:hover{
+           transform: scale(1.2);
+        }
+        #cart-list-quantity-holder>div:last-child button:last-child:hover{
+           transform: scale(1.5);
+        }
+        #cart-list-quantity-holder span{
+           padding:5px;
+           margin:0 5px;
+           font-size:12px;
+           
+        } */
+        #order-buttons-holder {
+            display: flex;
+            flex-direction: column;
+            margin: 40px 0;
+            padding-right: 10vw;
+        }
+
+        #order-buttons-holder>button {
+            margin: 5px 0;
+            font-size: 16px;
+            padding: 10px 0;
+            background-color: #f7f8fc;
+            outline: none;
+            position: relative;
+        }
+
+        #order-buttons-holder>button::before {
+            content: 'Add To Cart ';
+            color: #03071E;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            font-family: 'Roboto Slab', serif;
+            display: none;
+            width: 100%;
+
+        }
+
+        #order-buttons-holder>button:nth-child(1):before {
+            content: 'Add To Cart ';
+        }
+
+        #order-buttons-holder>button:nth-child(2):before {
+            content: 'CheckOut ';
+        }
+
+        #order-buttons-holder>button::after {
+            content: ' ';
+            height: 0;
+            width: 0;
+            background-color: #a78627;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+
+        #order-buttons-holder>button:hover::after {
+            width: 100%;
+            height: 100%;
+            transition: width .3s;
+        }
+
+        #order-buttons-holder>button:hover {
+            border: 2px solid #a78627;
+            color: white;
+        }
+
+        #order-buttons-holder>button:hover::before {
+            display: flex;
+        }
+
+        #description-holder>h2 {
+            color: #a78627;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        #description-holder p {
+            font-size: 12px;
+        }
+
+        #description-holder>div {
+            margin: 20px 0 50px 0;
+        }
+
+        #description-holder>div strong {
+            letter-spacing: 1px;
+            margin-right: 10px;
+        }
+
+        #related-products-holder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+
+        #related-products-holder>h1 {
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        #related-products-holder div {
+            display: flex;
+            justify-content: space-around;
+            width: 90vw;
+            margin-top: 50px;
+        }
+
+        .related-products {
+            padding: 0 10px;
+        }
+
+        .related-products:hover {
+            box-shadow: 2px 2px 5px 5px #e9e9ec;
+            border-radius: 5px;
+        }
+
+        .related-products>img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .related-products>figcaption {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        #add-to-cart-list-holder {
+            border: 1px solid black;
+            width: 300px;
+            padding: 20px 0;
+            background-color: #f7f8fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 2px solid #a78627;
+            background-color: #03071E;
+            display: none;
+            z-index: 2;
+            position: fixed;
+            right: 0px;
+            /* top:187px;   */
+        }
+
+        #cart-list-heading-holder {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        #cart-list-heading-holder i {
+            color: #a78627;
+            font-size: 14px;
+        }
+
+        #add-to-cart-list-holder h1 {
+            font-size: 14px;
+            font-style: italic;
+            /* margin-top:15px; */
+        }
+
+        #add-to-cart-list-holder>ul {
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        #add-to-cart-list-holder>ul>li {
+            display: flex;
+            align-items: center;
+            background-color: #f7f8fc;
+            margin-bottom: 5px;
+        }
+
+        #add-to-cart-list-holder>ul img {
+            width: 70px;
+            height: 70px;
+            margin-right: 10px;
+        }
+
+        #add-to-cart-list-holder>ul>li div {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-right: 100px;
+        }
+
+        #add-to-cart-list-holder>ul>li i {
+            font-size: 20px;
+            color: #03071E;
+        }
+
+        #add-to-cart-list-holder>ul>li div span:first-child {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        #add-to-cart-list-holder>ul>li div span:nth-child(2),
+        #add-to-cart-list-holder>ul>li div span:last-child {
+            font-size: 12px;
+        }
+
+        #cart-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            /* margin-top:30px; */
+        }
+
+        #add-to-cart-list-holder #cart-details>p a {
+            font-size: 12px;
+            color: #a78627;
+            font-style: italic;
+            text-decoration: underline;
+        }
+
+        #add-to-cart-list-holder>i {
+            color: #a78627;
+            position: absolute;
+            right: 10px;
+            top: 15px;
+        }
+
+        #add-to-cart-list-holder #cart-details>p {
+            font-size: 14px !important;
+            font-weight: bold;
+
+        }
+
+        #add-to-cart-list-holder #cart-details>p span {
+            margin-left: 90px;
+
+        }
+
+        #add-to-cart-list-holder #cart-details>button {
+            font-size: 12px !important;
+            padding: 5px;
+            width: 80%;
+            background: #a78627;
+            color: #03071E;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            margin: 5px 0;
+
+        }
+
+        @media only screen and (max-width: 1200px) {
+            #product-holder {
+                padding: 70px 20px;
+                background-color: #03071E;
+            }
+        }
+
+        @media only screen and (max-width: 992px) {
+
+            #product-holder {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                padding: 70px 0;
+                background-color: #03071E;
+            }
+
+            #product-details-holder {
+                margin-top: 50px;
+                width: 80vw;
+            }
+
+            #order-buttons-holder>button {
+                width: 50vw;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+
+            #related-products-holder div {
+                flex-wrap: wrap;
+            }
+
+            #related-products-holder div figure {
+                margin-top: 10px;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            #main-product-image-holder>img {
+                width: 350px;
+                height: 400px;
+                border: 4px solid #a78627;
+            }
+
+            #sub-images>img {
+                width: 70px;
+                height: 70px;
+            }
+
+            #order-buttons-holder>button {
+                width: 70vw;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+
+            #right-icon,
+            #left-icon {
+                top: 180px;
+            }
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-color: #03071e;
+            color: #a78627;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+            margin-bottom: 20px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(65, 3, 3, 0.2);
+            margin: 8px;
+        }
+
+        .about-section {
+            padding: 90px;
+            text-align: center;
+            background-color: #03071e;
+            color: #a78627;
+        }
+
+        .container {
+            padding: 0 40px;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: #f7f8fe;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: #a78627;
+            background-color: white;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+
+
+        body {
+            background-color: #03071e;
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #a78627;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 20px;
+            transition: 0.4s;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: #a78627;
+            color: #03071E;
+            overflow: hidden;
+        }
+
+        .head {
+            color: #a78627;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://github.com/Noreen-Jamil/jewelicious-product-landing-page/blob/master/images/final-logo.jpeg?raw=true" />
+        <span id="openbar" onclick="openNav()"><a href="#"> <i class="fas fa-bars"></i></a></span>
+    </header>
+    <nav id="side-menu" class="my-side-bar nav">
+        <a href="javascrit:void(0)" id="closebtn" onclick="closeNav()">&times;</a>
+
+        <ul>
+            <li><a href="#" class="cool-links ">Home</a></li>
+            <li>
+                <div class="drop-down-containers">
+                    <a href="#" class="cool-links">Women</a>
+                    <ul>
+                        <li><a href="#">Anklets</a></li>
+                        <li><a href="#">Bracelets</a></li>
+                        <li><a href="#">Bangles</a></li>
+                        <li><a href="#">Earrings</a></li>
+                        <li><a href="#">Nose pins</a></li>
+                        <li><a href="#">Necklace</a></li>
+                        <li><a href="#">Pendants</a></li>
+                        <li><a href="#">Rings</a></li>
+                        <li><a href="#">Watches</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down-containers">
+                    <a href="#" class="cool-links">Men</a>
+                    <ul>
+                        <li><a href="#">Bracelets</a></li>
+                        <li><a href="#">Cufflinks</a></li>
+                        <li><a href="#">Earrings</a></li>
+                        <li><a href="#">Rings</a></li>
+                        <li><a href="#">Pendants</a></li>
+                        <li><a href="#">Watches</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down-containers">
+                    <a href="#" class="cool-links">Kids</a>
+                    <ul>
+                        <li><a href="#">Anklets</a></li>
+                        <li><a href="#">Bracelets</a></li>
+                        <li><a href="#">Bangles</a></li>
+                        <li><a href="#">Earrings</a></li>
+                        <li><a href="#">Pendants</a></li>
+                        <li><a href="#">Rings</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down-containers">
+                    <a href="#" class="cool-links">Gold</a>
+                    <ul>
+                        <li><a href="#">Anklets</a></li>
+                        <li><a href="#">Bracelets</a></li>
+                        <li><a href="#">Bangles</a></li>
+                        <li><a href="#">Cufflinks</a></li>
+                        <li><a href="#">Earrings</a></li>
+                        <li><a href="#">Nose pins</a></li>
+                        <li><a href="#">Necklace</a></li>
+                        <li><a href="#">Rings</a></li>
+                        <li><a href="#">Pendants</a></li>
+                        <li><a href="#">Watches</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down-containers">
+                    <a href="#" class="cool-links">Silver</a>
+                    <ul>
+                        <li><a href="#">Anklets</a></li>
+                        <li><a href="#">Bracelets</a></li>
+                        <li><a href="#">Bangles</a></li>
+                        <li><a href="#">Cufflinks</a></li>
+                        <li><a href="#">Earrings</a></li>
+                        <li><a href="#">Nose pins</a></li>
+                        <li><a href="#">Necklace</a></li>
+                        <li><a href="#">Rings</a></li>
+                        <li><a href="#">Pendants</a></li>
+                        <li><a href="#">Watches</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down-containers">
+                    <a href="#" class="cool-links">Diamond</a>
+                    <ul>
+                        <li><a href="#">Anklets</a></li>
+                        <li><a href="#">Bracelets</a></li>
+                        <li><a href="#">Bangles</a></li>
+                        <li><a href="#">Cufflinks</a></li>
+                        <li><a href="#">Earrings</a></li>
+                        <li><a href="#">Nose pins</a></li>
+                        <li><a href="#">Necklace</a></li>
+                        <li><a href="#">Rings</a></li>
+                        <li><a href="#">Pendants</a></li>
+                        <li><a href="#">Watches</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down-containers">
+                    <a href="#" class="cool-links">About us</a>
+                    <ul>
+                        <li><a href="#contect">Contect us</a></li>
+                        <li><a href="#whyus">Why Us?</a></li>
+                        <li><a href="#members">Our Team Members</a></li>
+                        <li><a href="#faqs">FAQS</a></li>
+
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <div class="drop-down-containers">
+                    <a href="#" class="cool-links"><i class="far fa-user"></i></a>
+                    <ul>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Register</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="items-in-list-displayer" href="#"><i class="fas fa-shopping-bag"></i></a></li>
+            <li><a class="items-in-list-displayer" href="#"><i class="far fa-star"></i></a></li>
+            <li>
+                <div class="nav-icons-container">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <div id="search-dropdown">
+                        <input type="text" maxlength="50" placeholder="Search" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <div class="about-section">
+            <h1 id="whyus">Why us?</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum numquam quas quam, inventore saepe repellat
+                magni atque distinctio iste consectetur voluptatum consequuntur tempore esse ex, dolore, vero est
+                molestiae iusto!</p>
+            <p>Resize the browser window to see that this page is responsive by the way.</p>
+        </div>
+
+        <h2 style="text-align:center" id="members">Our Team Members...</h2>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRO7vwhpGthHqwbs8CbV1BMyCL0F3aA_gTGdw&usqp=CAU"
+                        alt="Jane" style="width:80%" >
+                    <div class="container">
+                        <h2>Shoaib Ahmed</h2>
+                        <p class="title">Team lead and developer</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.Some text that describes me lorem ipsum ipsum lorem.Some text that describes  ipsum lorem.</p>
+                        <p>jane@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Mike" style="width:80%">
+                    <div class="container">
+                        <h2>Noreen Jamil</h2>
+                        <p class="title">Team lead and developer</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>mike@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAREBUQEBAVEBUQFRUVFxUXFRUVFRcVFxUWFxUXFRUYHSggGBolHRgVITEhJSkrLi4uFyAzODMsNygtLisBCgoKDg0OGxAQGi0lICUtLS0vLS0tLS0tLS0tLS0tLTUrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSstK//AABEIARMAtwMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAQUDBAYCBwj/xABAEAACAQIEAwQHBgQFBAMAAAAAAQIDEQQSITEFQVEGYXGREyIygaGxwQcUUmLR8CNCcuGCkrLC8RVDU6IkMzT/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIDBAX/xAAkEQEAAgICAgIDAAMAAAAAAAAAAQIDERIhMUEiMgRRYUJScf/aAAwDAQACEQMRAD8A+4ggASCABIIAEggASCABIIMFfG0oe3OK7r6+SBEbbANHD8XoVJZY1It9Nn5M2JYqmnZzin0uhtOpZgQSEABAEggkACABIIAEkAASQSQBIAAAgASavEcfToQc6krJeb8D3jMTGlTlUm7Rgrs+Ucc4jVxtZ/g/ljyt39xW1tNMePlP8bfaHt5UndUXkjtpu/fz+COA4l2nratt+9v9EviWHH+IUMLG105LeyTd+ettPmcZVx868rKMsreqet13dDn7tPbsmIpHS7wHEK9Sopzm1F7a2dl82dHWx0mk41ZRfju+9HKRg3rJKK5R5rp7zYeJ9W6ebLo13df38xbvwivUdvpnYbttL0iwuJe/syf08Oa/b+mn5rU7pSvrFp3W/wCWS70fbuwXHPvOHyzf8SjZS74/yyXc9fI0x29Swy0/yh04ANnOAAAQSQBIIJAEEgAAAAAAAEAcf9oeMeSFBO2d5pf0pXf770fMuKcQqqUcJhI5q1Wzl+SL2TfLTV/3O17a106s6ktkrf4IetLzeVe4rfs34VeE8ZUV6mJk5X5qPJI57TuXoYa6r21OFfZ5TaUsU3Vm9Xrp5HQ0+y+GpxsqUfI6TKYMRIjTXe5fOO0vZuGWTprK+7Y+c1KsqcnmveHqyXVPr3n3bG001sfLe2nCsrdWK8fAzidSm9OVf6rMDX1jrpfI33StaXuuvI+gfZxxB0sRFPT1nSkvyyat5PK/C58s4RLN6SG+WF/cm35/ofQOC2VeOtlXhCa8ZR9Z/wDqzSepcsdw+7gw4Spmpxk95RTfjbUzHS45AAAAAAAACAAJIJIAkgkgCTFiJ2i33GQ0+JVLQfciLTqFqxuXy37TcTkwtR3tmap37r3k/n5G72F4/Tlh6cLxailHPF6XX4k9mc99r0b4WEL6ud/1/wBRk7K9nlKNKs80XCCVo+rFrKl6y3aeWOm10+rOeupjz29GIt+un0uVZblBjeNSz5YU1o7ZpzUY+WrZs4/NGgox0k7pPoitp8Lh6KUZZnnptZk2pKTW7s1dX1tdEx3Ol/EbTUrVZLN6SnJdIp2/zZjn+MWqQakuWpo8P7H4ilWVSFWULybklJuMo8k07+er+ZdcVwqhTbb1sZZIiPC+KZnzD5v2f4XlxNWKd1ODS7tdV8Tq+zzzUcJVe9Oboz7rqL/3T8im4FVX33L+JTXwv9DpeE0bUsVSX/aqRmvHPKL+ExNt+WOTHxt0+ycJlejD+lG4V3BJ3pIsTrr4edbzIACyoAQBIIJAAAAQABIAAFRxyXq2XP8AQtyl497DfRS+Rnk+rTF9ny/7SIKThHkmvn/Y67hNNRowgt2kvgct2/j68fd87/VFhwLi8Ywi6ssm0YvXfkjipb5S9nW8UaX3F5Zcum2ljJw+rGcdHe2j7n3ldxBOpLN94UEuWi1782piwlSlQu/TRd3dtyibb72z49LnFWijhu12Lfo3qdXja7lC61T5nEdrYWVjLLZrijty/Zf/APVGT3vZe9SR3XCqa+8YiD/7sL+cEl/pPmnZfFVP+p5ab9X2JdMqabt33VvC59M4Sr49J/zQb8opfUi0cZhz2vF9y+j9lamain1Ufkv7l2UPY9P7vC/4UXx24vrDzcv2kABozACAJAAAAgCSCSAJAAArOMU7wl/S/kWZp8RXqtLeUWl420K38L0nVnyT7S4tYaE1v6LfvS/VGPsRWjjMM72zL1Zr8M1Zp+GzLb7ScLnw8Yba1FpulbN/uPnHYziVTh+JzSvOlU9WqktUuU11y/Js4q1jcvYpNuETD69GriIxUZNVMqavKnGcrP8APdN27/fcrqnB1iJqeJipRi7xg1G17Wu0tNuRe4fHUpxUoSjNPncqOLcZhTTUWm+iZrbURvaNzM9Rqf8AjZx2IhFKKslHktlbY+YdtOMpZsusuX6lvjMfWqJqF1feT+iOR4tgHHV+td63Oblu3bWKzWs/tt/Z/wAMytTl7cnf62+PxO34C83FJ9KVLL73+0UHZC0ITr1HaNKDbfdZym/JfEsPs6qyq/eMVLSVZ3Xcn60Uv8skWndp5OSYiscYfXOzULUILpCPyLc0ODq1NJckvhob53Y/rDzsn2lBIBdRABIAEACQAAAAAAADQ4rVUYXf8rj5tpI3Zt8jiu03GYxlZvO4O+WO2bknfd/o+hTJbUNcVOVmPjnDvvE5fzR1srbNpKX+k+Y47hUqdeVNq+ungz692TqOphby1fpKqb6tTd353KftHwlOrGqlrFq/ernPNOtvRxZdfFymF4X/APFUKkctRLSV7puOzTvpfR27yywOChUhGaildbd/NFtj4RVN6WOX7GcQbq1qDd1GpJx8G9V53K5Ia1vNolePhsbbFDx3g/pIyilyaXjbQ7Cq0lr4Lq30S5sw1sL6rlON+kPxSekU/F20KcNqxk1L5jxPNR4e6O08Q2nHm4p+tFeNofE6Ls9H7thMNT1brzgpPo3GOW68I3X9TLzi3CKMoQhUjGc+XW71bXdd/I0qvZ3GuUp0YZ4vJKMZWi4SpZnBwzNb5pL/AB+SsTPx0zvrfKZfTOA1syavt/YtzmOzkKkKiU4OOaMt9db3SutDpzsxb49vOyx8gAGjMAAAAACCQAAAAAx16yhFzk7KKbfggKntLxN0aeWFvST0V9l1k+5HA4bCyrVVCn/Ecb6vROb9qcvyrX4roRieJ1MXXq1pS9SMnGEFs3DVRfXVRbfuOn7FcNdOl6aXtVrNd1PdP/F7Xkc992tp20jhX+rfhuDjhqEKSebIt+rbbb97bKviDzPXqWuOr2RxvaLjUKEHUnKyWi729El3tlpTT9qntjxtUYyilnnL1YQW8pPb3dWaXYngdSlT9NJ3qVN77ddLbldgqEsZX9I9VfWXL+mPdyPpfC8I3FKK0Wl9kY92nTpmYrVp4XD1L3cM8vxNryWmi8Czo8MqTalUtFR2Sd3d7vVb2+pa4bDRi9dWvh4m05dDppg/2ceT8j1VpUOH04O6gr/iesreO5tZUJTS3ZjlVR0RGvDlmZnyy042d/3o1f3m/F3K7D1rm9Tn5FLQMhIBVACCQAAAAAAAABUdoq0VRm5SSjDV8ru17N8lbVvki3OS4xhfvWJVCf8A9NJekqL/AMk27xi/yr1Xbm7dCtmmOO9uW7F4J4mvVrTX8NJRaStFtu+VLwt7n3o+iN2RgweFhSioU1lSbfi27tvvPGOrWRnHTpn5SqOM4zkfHO1nD+IcSx/3SjRm6dGSTlb1E5KLc5Sel0nt4n0nH4q9T1dWrWXe72/U6XgWCcIXlvLVmuOntlmt6VvZnsjDDUoU5vM4RSsu7q+Z1SpWSUbK3Tku5CNlot2eZV7txglJrfovF/Q1rWK+GV8lr+SeWC1dvi2/m2YWpy5+jj0Xtvxa9n3a96MsadnmbzS6vl4dEJyLKMUYJK0bL97tmGUnc9VHfQ1pSe3uA2cO9blrh2VWFetur+haYXYpKWwCCSiAgAASQAJAAAA8zkkrsBUlZFY0rtpe07t82ZMRXzbbGNGdrb6h046a7knKyOe47jVCMpN6JNlrja1kcZxOEsXiIYaHsxtUqf0p2gn4y+EGREcp01meNds3YTATq1amIqrS+if4v7L6HetqKb6GLhuBjRpxpxVrb975nnG1HKSpR/m3fRc/gdbimfbFKFWrFpSdJ1NM6tmjDnk/O+T2W+uz28Nh4UoKnTjaMVotX4tt6tvm3qzPZJWtojxU7tCBjm/3yMMjK9eZhqS5LzJGCo7aczxTXM9yjrrr7/mNbfv4BD1Sdnr1Lahuynp7rQuaHzXyKSlmJAKICCQBBIAAAARKVldlbXrOT7jYx89EuppGd59OjFXraUeK1SyPTZXY7EWKOiI2reOcQjThKcnZRTbMv2f4B+g+9VF6+Ll6bX+Wna1GP+XXxmzl8VRePxUMJf8Ah3UqtvwJ+z73p4Jn1OlBRiklZJJJcklskbYo62w/It3xRWnlRjw9G15Nay+CPNSslNN7fvU2Js136c+p8vMmY5tc2JtvmY5Fh5qSb0WiMTil3mR97XgYp3CHhpnmpJbb+Z7PFT5AeqXtrzLKjP8AiRX5X9LGhhVeXuM3C55qs+aikk/e/wBCki2ABQAAAAAAgkAamPjomaRucQvp7yurVLIzt5deKPi816hy/aXHqnTk27WRc165y3EODTxdVwrRcaUbeq7p1HZNX/JqtOfhvhezrpWFH9k3aelUxdeFRWlVknSlylCOmVd+797Ps7lpe/xPn67M0bJKKjls00rOLWzi1s0dBwyVfI4VpRmk/VklZuP5ltfwOimeOLkyYLct7b8pXd/I26E7x8NP0NMy4WoszXVX8iuK089z7Wy0jh16Z5u2hicxWlqY7d9zscSMze5GU9PyE0QMXMjdO+ngH1PUFcSPVN5YuXVpG3walaMpdX9W/qaNaV4pcrpfAucHTywSKW8DMSAUAAAAAAAAHirTUlZlTiuG1JaJqxckETG16ZLU8K/A8KhDWXrP4I1OJUf4rfVL5F4amPpXV+hW1d100x5J57lR+j1NiMLaHtRSPFSdjCI07N7eatSyK+ONy1YXftSUf82n1POMxBw/aXjbhpF3lvFLe62fgREzyjS01iKzt9Ok23foTmZgw9ZVIQnsqsYy8MyT+pmSa0+B6TyjOzxJsmaezIvsBH71FOor5Vy9p9O7xNbHYmzUIu0peaXXxPdCFo5YrV6PuvvqVGanLS/WV14vRL4/Av4RskuisUGEWetGC2p6vxX6bHQlLAACoAAAAAABAEkEkASa2OfqGyY60M0WhK1Z1MSpZysaOIqM2cYmnqV+KzZXJQlK3JLV9yvoYTWZelExEbU3FcRpZbvRK+7Oc4f2acq9SvW1z+jiu6ym2l3aosqnZ7E4jERxEZyio6Km1lceqa5t9Vc7aXC89FQbySVndK+qT5aX3N8OPjO5cn5GXn1D3goKMIJfyxivI3JmKOGUYpJ6JJXfOytfxMVXELaClN9y098tjdzM8pJblXxLi8Kayr1pvaK38XbZG392qT1lJQXSO/vk/pYqf+gQhUzJXT111173zGkPODozlLNJ3ct3e3/CLKc8vqR9p81rb+57hQe0bJfE28LgUnotXzEjPwPDKKbt3c/qWp4pU8qsezGZ3KQAEAAAAAAAAAAQBJEtiSGBoYmg3JTjuuXJp73/AFNPE4aM3e7g+ZazMc4J8jWJSqqGDaerze82oXWl/PUzOhHoHBIttDUxFGD1nG9u6/wPFOdON1GpZ6WUna3gmbc4rrY1a8b85a9F9bEoevS1FK0krPaWur71yFbEqLSmms7yqybV2na9ttt3oayw7j7Llrvmk5Lyd0YatdtOFW8W3o1tbl3xd+YFpRau10t8SyowSOZw08TCXqyjWi+vqzWu2ZaNeK95dYDH53klGUJW2kvk1o/czOyVgADMAAAAAAAACCQAIJAAAAYZI8SMtRGKReEsbZDieiGWQ8NI8TMrRjaJGF6mOrST3Mzh/wAmvXqy2gsz67Je8lDxDA098kfGxY8FwkKNJU4Xahzbcn729WVNLDTupVqmbpCOkF485P8Adi1w02n0K2ghYkCLuSZJQCQAAAAAAQSAAIJAAAAeJowszTRimy0JY2QyWwvMuPLRjlIyyMNQtCGKrd7u3ctzBJ20St36syzlqYMt+vcSq8Ko7/X5/Q2VWt33ME4GSnJRXN3IlKyw1R8zbTKSvjoU93eT2jz9/RGXgePdRNt3U3eP9Nklbudm13NFJr1s36W4AM0gAAAAAQSABBIAAADzIxyRIJgYEgAaDyzDMAtCJYmjzJKyAJQxQ1TOc7c8Qq4fBzq0Z5JpxSlZNpN2droAtT7Qpkn4y5zg9aU6MM8nP0lVKbbu5LW6ber2L/iWMqU8Di6kJuM6dCvOMlvGUaUpRa8HqSC+XyyxeHe8NqOdGnOTu5U4Sb6txTZsEg458uoABAAAD//Z"
+                        alt="John" style="width:80%">
+                    <div class="container">
+                        <h2>Shahida Mengal</h2>
+                        <p class="title">Designer and developer</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>john@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Mike" style="width:80%">
+                    <div class="container">
+                        <h2>Bushra Naz</h2>
+                        <p class="title">Designer and developer</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>mike@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Mike" style="width:80%">
+                    <div class="container">
+                        <h2>summera</h2>
+                        <p class="title">Designer and developer</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>mike@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="column">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRO7vwhpGthHqwbs8CbV1BMyCL0F3aA_gTGdw&usqp=CAU"
+                        alt="Mike" style="width:80%">
+                    <div class="container">
+                        <h2>Saim Ansari</h2>
+                        <p class="title">Designer and developer</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.Some text that describes me lorem ipsum ipsum lorem.Some text that describes  ipsum lorem.</p>
+                        <p>mike@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 class="head" id="faqs">FAQS .......</h2>
+
+        <button class="accordion">Section 1</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 2</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 3</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 4</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 5</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 6</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 7</button>
+        <div class="panel">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium vel ab similique nostrum vitae
+                cum repellendus, eveniet temporibus, iste quos ipsum placeat dolor ullam, rerum aliquam? Dolores, ut
+                qui.</p>
+        </div>
+
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+        </script>
+
+    </main>
+
+
+
+
+
+    <!-- This is footer section  -->
+    <footer>
+        <div id="foot-background">
+            <section class="foot-detail">
+
+                <div class="foot-item">
+                    <h1 id="foot-heading">Find us</h1>
+
+                    <div id="icon-anchor">
+                        <a id="icon-anchor1" href="#" class="cool-link"><i class="fas fa-globe-europe"></i> 1234 Street
+                            Name City, AA
+                            9999</a>
+                        <a id="icon-anchor2" href="#" class="cool-link"><i class="fas fa-bell"></i> +1 (0) 000 0000
+                            001</a>
+                        <a id="icon-anchor3" href="#" class="cool-link"><i class="far fa-envelope"></i>
+                            jewelicious@gmail.com</a>
+
+                        <div id="social-icons-div">
+                            <a href="#" class="icon-anchor4" class="cool-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="icon-anchor4" class="cool-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="icon-anchor4" class="cool-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="icon-anchor4" class="cool-link"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="icon-anchor4" class="cool-link"><i class="fab fa-google-plus-g"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot-detail1">
+                    <h1>Explore Jewelicious</h1>
+                    <a href="" class="cool-link">Home</a>
+                    <a href="" class="cool-link">Cart</a>
+                    <a href="" class="cool-link">Whishlist</a>
+                    <a href="" class="cool-link">Shops</a>
+                    <a href="" class="cool-link">Men</a>
+                    <a href="" class="cool-link">Woman</a>
+                    <a href="" class="cool-link">Kids</a>
+                    <a href="" class="cool-link">Gold</a>
+                    <a href="" class="cool-link">Diamond</a>
+                    <a href="" class="cool-link">Silver</a>
+
+
+                </div>
+                <div class="foot-detail1">
+                    <h1>Policy Matters</h1>
+                    <a href="" class="cool-link">Terms And conditions</a>
+                    <a href="" class="cool-link">Privacy Policy</a>
+                    <a href="" class="cool-link">Exchange Policy</a>
+                    <a href="" class="cool-link">Shipping Details</a>
+                    <a href="" class="cool-link"> Payment Methods</a>
+                </div>
+                <div class="foot-detail1">
+                    <h1>About Us</h1>
+                    <a href="" class="cool-link">FAQ(frequently Asked Questions).</a>
+                    <a href="" class="cool-link">Why Us?</a>
+                    <a href="" class="cool-link">Contact us</a>
+                </div>
+            </section>
+        </div>
+        <p class="foot-para"> © 2020 Jewelicious All rights reserved</p>
+
+    </footer>
+    <button onclick="topFunction()" id="updown"><a href="#"><i class="fas fa-chevron-up"></i></a></button>
+
+    <script src="sidestyle.js"></script>
+    <script src="product-script.js"></script>
+</body>
+
+</html>
